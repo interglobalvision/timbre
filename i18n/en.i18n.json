@@ -1,6 +1,17 @@
 {
+  "home-title": "What is Timbre?",
+  "home-copy": "Timbre is a doorbell for places without doorbells. Sign up and register a geolocation. Add multiple users to the location if you want. Then when you get to a place where you want to ring a bell, use Timbre instead!",
+
   "menu-contentpage": "Content Page",
-  "menu-items": "Items"
+  "menu-items": "Items",
+
+  "user-username": "Username",
+  "user-password": "Password",
+  "user-email": "Email",
+  "user-login": "Login",
+  "user-forgot": "Forgot Password?",
+  "user-reset": "Reset Password",
+  "user-signup": "Create Account"
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."

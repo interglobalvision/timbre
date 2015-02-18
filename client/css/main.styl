@@ -3,13 +3,17 @@
   // GRID BUILDER
 
 $cols = 8
-$col = 80px
-$gutter = 16px
+$col = 40px
+$gutter = 14px
 .container
   margin: 0 auto
   width: ($col * $cols)+($gutter * $cols)
 .row
   clear: both
+  &:after
+    content:""
+    display:table
+    clear:both
 .col
   float: left
   margin-left: ($gutter/2)
@@ -34,6 +38,9 @@ $margin-large = ($gutter*5)
 
 $color-black-soft = rgb(14,14,14)
 $color-white-soft = rgb(253,253,253)
+
+$color-light-gray = gray
+$color-dark-gray = rgb(100,100,100)
 
 html
   background-color: $color-white-soft
@@ -75,3 +82,25 @@ a,a:active,a:visited
   transition:opacity .2s
   &:hover
     opacity:.5
+
+// TOOLBAR
+
+#toolbar
+  margin-top: $margin-small
+
+#toolbar-border
+  margin: $margin-small 0
+  border-bottom: solid 2px $color-dark-gray
+
+// FORM
+
+.form-input
+  margin-bottom: $margin-basic
+
+input
+  box-sizing: border-box
+  padding: $margin-small
+  border-radius: 4px
+  width: 100%
+  font-size: 1em
+  border: solid 2px $color-light-gray

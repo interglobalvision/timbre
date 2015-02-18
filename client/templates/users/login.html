@@ -1,18 +1,50 @@
 <template name="login">
-  <div class="container">
-    <form>
-      <div class="control-group">
-        <label>Username</label>
-        <div class="controls"><input id="username" type="text" value="" /></div>
+  <div class="container" id="toolbar">
+    <div class="row">
+      <nav class="col col1">
+        <a href="/"><span class="genericon genericon-previous"></span></a>
+      </nav>
+      <div class="col col6 u-align-center">
+        {{_ "user-login"}}
       </div>
-      <div class="control-group">
-        <label>Password</label>
-        <div class="controls"><input id="password" type="password" value="" /></div>
-      </div>
-      <div class="form-actions">
-        <a href="/forgot">Forgot password?</a>
-        <input type="submit" class="button" value="Log In" />
-      </div>
-    </form>
+    </div>
   </div>
+  <div id="toolbar-border"></div>
+
+  <div class="container">
+
+    <h1 class="u-align-center"><img src="/images/timbre-logo.svg" /></h1>
+
+    <div class="row">
+      <div class="col col8">
+        <form>
+          <div class="form-input">
+            <input id="username" type="text" value="" placeholder="{{_ "user-username"}}"/>
+          </div>
+          <div class="form-input">
+            <input id="password" type="password" value="" placeholder="{{_ "user-password"}}"/>
+          </div>
+
+          <div class="form-submit">
+            <input type="submit" class="button" value="{{_ "user-login"}}" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col col4">
+        <a href="/forgot">{{_ "user-forgot"}}</a>
+      </div>
+      <div class="col col4">
+        <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
+      </div>
+    </div>
+
+  </div>
+
 </template>

@@ -1,5 +1,27 @@
 <template name="homepage">
   <div class="container">
-    <h2>Hello Cruel World</h2>
+
+    <h1 class="u-align-center"><img src="/images/timbre-logo.svg" /></h1>
+
+    <div class="row">
+      <div class="col col8">
+        <h2>{{_ "home-title"}}</h2>
+        <p>{{_ "home-copy"}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col col4">
+        <a href="{{pathFor 'login'}}">{{_ "user-login"}}</a>
+      </div>
+      <div class="col col4">
+        <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
+      </div>
+    </div>
+
   </div>
 </template>
