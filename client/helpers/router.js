@@ -27,7 +27,7 @@ var filters = {
 
 }
 
-Router.onBeforeAction(filters.isLoggedIn, {except: ['homepage', 'login']});
+Router.onBeforeAction(filters.isLoggedIn, {except: ['homepage', 'login', 'signup']});
 
 // Routes
 
