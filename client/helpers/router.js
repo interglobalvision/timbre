@@ -18,20 +18,16 @@ Router.configure({
 
 var filters = {
 
-  myFilter: function () {
-    this.next();
-  },
-
   isLoggedIn: function() {
     if (!(Meteor.loggingIn() || Meteor.user())) {
-      alert('Please Log In First.')
       this.stop();
+      this.redirect('/login');
     }
   }
 
 }
 
-Router.onBeforeAction(filters.myFilter, {only: ['items']});
+Router.onBeforeAction(filters.isLoggedIn, {except: ['homepage', 'login']});
 
 // Routes
 

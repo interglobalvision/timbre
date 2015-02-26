@@ -16,7 +16,9 @@
 
     <div class="row">
       <div class="col col4">
+        {{#if notLoggedIn}}
         <a href="{{pathFor 'login'}}">{{_ "user-login"}}</a>
+        {{/if}}
       </div>
       <div class="col col4">
         <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
