@@ -7,10 +7,9 @@ Template.login.events = {
     console.log('login click')
 
     Meteor.loginWithPassword(username, password, function(error){
-      if(error){
-          console.log(error.reason);
-//         flash(error.reason, 'error');
-      }else{
+      if (error){
+        console.log(error.reason);
+      } else{
         Router.go('/');
       }
     });

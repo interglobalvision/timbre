@@ -22,12 +22,14 @@ var filters = {
     if (!(Meteor.loggingIn() || Meteor.user())) {
       this.stop();
       this.redirect('/login');
+    } else {
+      this.next();
     }
   }
 
 }
 
-Router.onBeforeAction(filters.isLoggedIn, {except: ['homepage', 'login', 'signup']});
+Router.onBeforeAction(filters.isLoggedIn, {except: ['about', 'login', 'signup']});
 
 // Routes
 
@@ -58,14 +60,31 @@ Router.map(function() {
     }
   });
 
-
   // Pages
 
   this.route('homepage', {
-    path: '/'
+    path: '/',
+    onBeforeAction: function () {
+      if (!(Meteor.loggingIn() || Meteor.user())) {
+        this.stop();
+        this.redirect('/about');
+      } else {
+        this.next();
+      }
+    }
   });
 
-  this.route('content');
+  this.route('settings');
+
+  this.route('about');
+
+  // TIMBRES
+
+  this.route('editTimbre', {
+    path: '/timbre/edit/:_id',
+    waitOn: function () {},
+    data: function () {}
+  });
 
   // Users
 
