@@ -76,6 +76,8 @@ Router.map(function() {
 
   this.route('settings');
 
+  this.route('change-password');
+
   this.route('about');
 
   // TIMBRES

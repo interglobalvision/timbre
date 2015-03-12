@@ -10,6 +10,9 @@
   "settings-user-settings": "User Settings",
   "settings-change-password": "Change Password",
 
+  "settings-password": "Password",
+  "settings-change": "Change",
+
   "user-username": "Username",
   "user-password": "Password",
   "user-email": "Email",
