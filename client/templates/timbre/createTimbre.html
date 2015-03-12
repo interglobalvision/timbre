@@ -16,23 +16,34 @@
 
   <div class="container">
 
-    <div class="row">
-      <div class="col col8">
-        **Name / address label**
-      </div>
-    </div>
+    <form>
 
-    <div class="row">
-      <div class="col col8">
-        **map**
+      <div class="row">
+        <div class="col col8">
+            <div class="form-input">
+              <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
+            </div>
+            <div class="form-input">
+              <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
+            </div>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col col8">
-        {{_ "timbre-create"}}
+      <div class="row">
+        <div class="col col8">
+          **map**
+        </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col col8">
+          <div class="form-submit">
+            <input type="submit" class="button" value="{{_ "timbre-create"}}" />
+          </div>
+        </div>
+      </div>
+
+    </form>
 
   </div>
 

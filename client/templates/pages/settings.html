@@ -30,7 +30,7 @@
 
     <div class="row">
       <div class="col col8">
-        <a href="/timbre/create">{{_ "settings-create-new"}}</a>
+        <a href="/timbre/create">{{_ "settings-create-new"}} <span class="genericon genericon-plus"></span></a>
       </div>
     </div>
 
@@ -46,7 +46,17 @@
 
     <div class="row">
       <div class="col col8">
-        **Username / Email / Submit form**
+        <form>
+          <div class="form-input">
+            <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
+          </div>
+          <div class="form-input">
+            <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
+          </div>
+          <div class="form-submit">
+            <input type="submit" class="button" value="{{_ "settings-change"}}" />
+          </div>
+        </form>
       </div>
     </div>
 

@@ -12,9 +12,13 @@
 
   "settings-password": "Password",
   "settings-change": "Change",
+  "settings-new-password": "New Password",
+  "settings-new-password-again": "New Password Again",
 
   "timbre-create-timbre": "Create Timbre",
   "timbre-create": "Create",
+  "timbre-name": "Timbre Name",
+  "timbre-address-optional": "Timbre Address (optional)",
 
   "user-username": "Username",
   "user-password": "Password",
