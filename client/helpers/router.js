@@ -76,11 +76,17 @@ Router.map(function() {
 
   this.route('settings');
 
-  this.route('change-password');
+  this.route('changePassword', {
+    path: '/change-password',
+  });
 
   this.route('about');
 
   // TIMBRES
+
+  this.route('createTimbre', {
+    path: '/timbre/create'
+  });
 
   this.route('editTimbre', {
     path: '/timbre/edit/:_id',

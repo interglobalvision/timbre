@@ -13,6 +13,9 @@
   "settings-password": "Password",
   "settings-change": "Change",
 
+  "timbre-create-timbre": "Create Timbre",
+  "timbre-create": "Create",
+
   "user-username": "Username",
   "user-password": "Password",
   "user-email": "Email",
