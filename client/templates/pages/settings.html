@@ -22,11 +22,17 @@
       </div>
     </div>
 
+    **List timbres associated with user**
+    {{#each timbres}}
     <div class="row">
-      <div class="col col8">
-        **List timbres associated with user**
+      <div class="col col6">
+        {{_id}}
+      </div>
+      <div class="col col2">
+        <a href="/timbre/edit/{{_id}}"><span class="genericon genericon-edit"></span></a>
       </div>
     </div>
+    {{/each}}
 
     <div class="row">
       <div class="col col8">
