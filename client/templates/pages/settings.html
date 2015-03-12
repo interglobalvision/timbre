@@ -1,17 +1,19 @@
 <template name="settings">
-  <div class="container" id="toolbar">
+  <div id="toolbar">
+    <div class="container">
 
-    <div class="row">
-      <div class="col col1">
-        <a href="/">
-          <span class="genericon genericon-previous"></span>
-        </a>
+      <div class="row">
+        <div class="col col1">
+          <a href="/">
+            <span class="genericon genericon-previous"></span>
+          </a>
+        </div>
+        <div class="col col6">
+          <h1 class="u-align-center">{{_ "settings-title"}}</h1>
+        </div>
       </div>
-      <div class="col col6">
-        <h1 class="u-align-center">{{_ "settings-title"}}</h1>
-      </div>
+
     </div>
-
   </div>
 
   <div class="container">
@@ -36,7 +38,7 @@
 
     <div class="row">
       <div class="col col8">
-        <a href="/timbre/create">{{_ "settings-create-new"}} <span class="genericon genericon-plus"></span></a>
+        <a href="/timbre/create" class="settings-button">{{_ "settings-create-new"}} <span class="genericon genericon-plus"></span></a>
       </div>
     </div>
 
@@ -68,7 +70,7 @@
 
     <div class="row">
       <div class="col col8">
-        <a href="/change-password">{{_ "settings-change-password"}} <span class="genericon genericon-next"></span></a>
+        <a href="/change-password" class="settings-button">{{_ "settings-change-password"}} <span class="genericon genericon-next"></span></a>
       </div>
     </div>
 

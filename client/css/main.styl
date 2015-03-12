@@ -42,6 +42,11 @@ $color-white-soft = rgb(253,253,253)
 $color-light-gray = gray
 $color-dark-gray = rgb(100,100,100)
 
+$color-light-green = rgb(245, 250, 248)
+
+$color-light-pink = rgb(255, 216, 210)
+$color-dark-pink = rgb(254, 104, 107)
+
 html
   background-color: $color-white-soft
   color: $color-black-soft
@@ -53,7 +58,7 @@ $font-leading-basic = 1.4em
 
 $font-size-h1 = 40px
 $font-size-h2 = 30px
-$font-size-h3 = 24px
+$font-size-h3 = 14px
 
 html
   font-family: sans-serif
@@ -70,6 +75,11 @@ h2
 
 h3
   font-size: $font-size-h3
+  background-color: $color-dark-gray
+  padding: $margin-tiny $margin-small
+  color: $color-white-soft
+  text-transform: uppercase
+  margin-bottom: $margin-small
 
 h1,h2,h3,h4,h5,h6
   line-height: $font-leading-basic
@@ -86,16 +96,24 @@ a,a:active,a:visited
 // TOOLBAR
 
 #toolbar
-  margin-top: $margin-small
-
-#toolbar-border
-  margin: $margin-small 0
+  padding: $margin-small
   border-bottom: solid 2px $color-dark-gray
-
+  background-color: $color-light-green
+  
+.logo-col
+  text-align: center
+  img.logo 
+    width: 120px
+  
 // FORM
 
-.form-input
-  margin-bottom: $margin-basic
+form 
+  padding: 0 $margin-small
+  
+input
+  margin-bottom: $margin-small
+  &:focus
+    outline: 0
 
 input
   box-sizing: border-box
@@ -104,3 +122,25 @@ input
   width: 100%
   font-size: 1em
   border: solid 2px $color-light-gray
+  cursor: pointer
+  
+::-webkit-input-placeholder 
+  text-align: right
+  
+input:-moz-placeholder
+  text-align: right
+  
+input.button
+  border-width: 0 0 2px 0
+  font-weight: 700
+  
+// SETTINGS
+
+.settings-button
+  padding: $margin-small
+  border: solid $color-light-gray
+  border-width: 1px 0
+  display: block
+  text-transform: uppercase
+  .genericon
+    float: right
