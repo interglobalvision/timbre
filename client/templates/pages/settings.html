@@ -1,0 +1,61 @@
+<template name="settings">
+  <div class="container" id="toolbar">
+
+    <div class="row">
+      <div class="col col1">
+        <a href="/settings">
+          <span class="genericon genericon-previous"></span>
+        </a>
+      </div>
+      <div class="col col6">
+        <h1 class="u-align-center">{{_ "settings-title"}}</h1>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col col8">
+        <h3>Timbres</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col8">
+        **List timbres associated with user**
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col8">
+        {{_ "settings-create-new"}}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col col8">
+        <h3>{{_ "settings-user-settings"}}</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col8">
+        **Username / Email / Submit form**
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col8">
+        <a href="/change-password">{{_ "settings-change-password"}} <span class="genericon genericon-next"></span></a>
+      </div>
+    </div>
+
+  </div>
+
+</template>

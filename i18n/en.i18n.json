@@ -5,6 +5,11 @@
   "menu-contentpage": "Content Page",
   "menu-items": "Items",
 
+  "settings-title": "Settings",
+  "settings-create-new": "Create New",
+  "settings-user-settings": "User Settings",
+  "settings-change-password": "Change Password",
+
   "user-username": "Username",
   "user-password": "Password",
   "user-email": "Email",
