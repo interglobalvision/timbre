@@ -34,6 +34,8 @@ $margin-small = ($gutter)
 $margin-basic = ($gutter*2)
 $margin-large = ($gutter*5)
 
+$border-width = 2px
+
 // COLORS
 
 $color-black-soft = rgb(14,14,14)
@@ -98,7 +100,7 @@ a,a:active,a:visited
 
 #toolbar
   padding: $margin-small
-  border-bottom: solid 2px $color-dark-gray
+  border-bottom: solid $border-width $color-dark-gray
   background-color: $color-light-green
   
 .logo-col
@@ -122,7 +124,7 @@ input
   border-radius: 4px
   width: 100%
   font-size: 1em
-  border: solid 2px $color-gray
+  border: solid $border-width $color-gray
   cursor: pointer
   
 ::-webkit-input-placeholder 
@@ -132,7 +134,7 @@ input:-moz-placeholder
   text-align: right
   
 input.button
-  border-width: 0 0 2px 0
+  border-width: 0 0 $border-width 0
   font-weight: 700
   
 // SETTINGS
@@ -140,7 +142,7 @@ input.button
 .settings-button
   padding: $margin-small
   border: solid $color-gray
-  border-width: 1px 0
+  border-width: $border-width 0
   display: block
   text-transform: uppercase
   .genericon
