@@ -28,10 +28,12 @@ Timbres.allow({
 // Methods
 
 Meteor.methods({
+/*
   createTimbre: function(timbre){
     if(can.createTimbre(Meteor.user()))
       Timbres.insert(timbre);
   },
+*/
   removeTimbre: function(timbre){
     if(can.removeTimbre(Meteor.user(), timbre)){
       Timbres.remove(timbre._id);

@@ -7,7 +7,8 @@ Template.createTimbre.onRendered(function() {
 
       var startLocation = [19.435156, -99.140907];
 
-      var locationInput = $('#timbre-location');
+      var locationInputLat = $('#timbre-lat');
+      var locationInputLong = $('#timbre-long');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiaW50ZXJnbG9iYWx2aXNpb24iLCJhIjoiVWJ4c3pFayJ9.uetYP9xe-j0wqh4oUN3WxA';
       var map = L.mapbox.map('map', 'interglobalvision.lgbm61l6');
@@ -15,7 +16,7 @@ Template.createTimbre.onRendered(function() {
 
       if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position) {
-          console.log(position);
+//           console.log(position);
           map.setView([position.coords.latitude, position.coords.longitude], 17);
         }, function(error) {
           console.log(error);
@@ -36,7 +37,8 @@ Template.createTimbre.onRendered(function() {
         'moveend': function() {
           var newCenter = map.getCenter();
           marker.setLatLng(newCenter).update();
-          locationInput.val(newCenter);
+          locationInputLat.val(newCenter.lat);
+          locationInputLong.val(newCenter.lng);
         }
       });
     }
@@ -45,7 +47,15 @@ Template.createTimbre.onRendered(function() {
 });
 
 Template.createTimbre.events = {
-  'click input[type=submit]': function(e) {
+  'submit #form-create-timbre': function(e) {
     e.preventDefault();
+    var data = $('#form-create-timbre').serializeArray();
+    Meteor.call('createTimbre', data, function (error, result) {
+      if (error) {
+        console.log(error);
+      } else {
+        alert(result);
+      }
+    });
   }
 };
