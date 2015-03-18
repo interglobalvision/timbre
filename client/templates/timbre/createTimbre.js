@@ -3,6 +3,8 @@ Template.createTimbre.onRendered(function() {
   this.autorun(function () {
     if (Mapbox.loaded()) {
 
+      $('#map').height(($(window).height()/2));
+
       var startLocation = [19.435156, -99.140907];
 
       var locationInput = $('#timbre-location');
