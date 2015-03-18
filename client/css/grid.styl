@@ -1,0 +1,55 @@
+.container
+  width: 96%
+  max-width: 560px
+  margin: 0 auto
+
+.col
+  display:inline
+  float: left
+  position: relative
+  box-sizing: border-box
+
+.col1
+  width: 12.5%
+
+.col2
+  width: 25%
+
+.col3
+  width: 37.5%
+
+.col4
+  width: 50%
+
+.col5
+  width: 62.5%
+
+.col6
+  width: 75%
+
+.col7
+  width: 87.5%
+
+.col8
+  width: 100%
+
+// http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack
+
+.clearfix:after, .row:after
+  clear: both
+  content: ' '
+  display: block
+  font-size: 0
+  line-height: 0
+  visibility: hidden
+  width: 0
+  height: 0
+
+.clearfix, .row
+  display: inline-block
+
+* html .clearfix, html .row
+  height: 1%
+
+.clearfix, .row
+  display: block

@@ -1,38 +1,9 @@
 // STRUCUTRE
 
-  // GRID BUILDER
-
-$cols = 8
-$col = 40px
-$gutter = 14px
-.container
-  margin: 0 auto
-  width: ($col * $cols)+($gutter * $cols)
-.row
-  clear: both
-  &:after
-    content:""
-    display:table
-    clear:both
-.col
-  float: left
-  margin-left: ($gutter/2)
-  margin-right: ($gutter/2)
-for col in 1..$cols
-  .col{col}
-    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-    // FLUID RESPONSIVE CONTAINER STYLE IF NO GRID
-
-// .container
-//   max-width: 700px
-//   width: 90%
-//   margin: 0 auto
-
-$margin-tiny = ($gutter/2)
-$margin-small = ($gutter)
-$margin-basic = ($gutter*2)
-$margin-large = ($gutter*5)
+$margin-tiny = ($margin-small/2)
+$margin-small = 10px
+$margin-basic = ($margin-small*2)
+$margin-large = ($margin-small*5)
 
 $border-width = 2px
 
@@ -102,17 +73,17 @@ a,a:active,a:visited
   padding: $margin-small
   border-bottom: solid $border-width $color-dark-gray
   background-color: $color-light-green
-  
+
 .logo-col
   text-align: center
-  img.logo 
+  img.logo
     width: 120px
-  
+
 // FORM
 
-form 
+form
   padding: 0 $margin-small
-  
+
 input
   margin-bottom: $margin-small
   &:focus
@@ -126,17 +97,17 @@ input
   font-size: 1em
   border: solid $border-width $color-gray
   cursor: pointer
-  
-::-webkit-input-placeholder 
+
+::-webkit-input-placeholder
   text-align: right
-  
+
 input:-moz-placeholder
   text-align: right
-  
+
 input.button
   border-width: 0 0 $border-width 0
   font-weight: 700
-  
+
 // SETTINGS
 
 .settings-button
