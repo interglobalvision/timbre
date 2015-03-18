@@ -1,6 +1,6 @@
 <template name="settings">
   <div id="toolbar">
-    <div class="container">
+    <div class="wrapper">
 
       <div class="row">
         <div class="col col1">
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrapper">
 
     <div class="row">
       <div class="col col8">
@@ -24,27 +24,27 @@
       </div>
     </div>
 
-    **List timbres associated with user**
-    {{#each timbres}}
-    <div class="row">
-      <div class="col col6">
-        {{_id}}
+    <div class="container">
+
+      **List timbres associated with user**
+      {{#each timbres}}
+      <div class="row">
+        <div class="col col6">
+          {{_id}}
+        </div>
+        <div class="col col2">
+          <a href="/timbre/edit/{{_id}}"><span class="genericon genericon-edit"></span></a>
+        </div>
       </div>
-      <div class="col col2">
-        <a href="/timbre/edit/{{_id}}"><span class="genericon genericon-edit"></span></a>
+      {{/each}}
+
+      <div class="row">
+        <div class="col col8">
+          <a href="/timbre/create" class="settings-button">{{_ "settings-create-new"}} <span class="genericon genericon-plus"></span></a>
+        </div>
       </div>
+
     </div>
-    {{/each}}
-
-    <div class="row">
-      <div class="col col8">
-        <a href="/timbre/create" class="settings-button">{{_ "settings-create-new"}} <span class="genericon genericon-plus"></span></a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="container">
 
     <div class="row">
       <div class="col col8">
@@ -52,26 +52,30 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col col8">
-        <form>
-          <div class="form-input">
-            <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
-          </div>
-          <div class="form-input">
-            <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
-          </div>
-          <div class="form-submit">
-            <input type="submit" class="button" value="{{_ "settings-change"}}" />
-          </div>
-        </form>
-      </div>
-    </div>
+    <div class="container">
 
-    <div class="row">
-      <div class="col col8">
-        <a href="/change-password" class="settings-button">{{_ "settings-change-password"}} <span class="genericon genericon-next"></span></a>
+      <div class="row">
+        <div class="col col8">
+          <form>
+            <div class="form-input">
+              <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
+            </div>
+            <div class="form-input">
+              <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
+            </div>
+            <div class="form-submit">
+              <input type="submit" class="button" value="{{_ "settings-change"}}" />
+            </div>
+          </form>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="col col8">
+          <a href="/change-password" class="settings-button">{{_ "settings-change-password"}} <span class="genericon genericon-next"></span></a>
+        </div>
+      </div>
+      
     </div>
 
   </div>

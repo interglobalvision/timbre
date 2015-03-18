@@ -1,5 +1,5 @@
 <template name="createTimbre">
-  <div class="container" id="toolbar">
+  <div id="toolbar">
 
     <div class="row">
       <div class="col col1">
@@ -14,38 +14,42 @@
 
   </div>
 
-  <div class="container">
+  <div class="wrapper">
 
-    <form id="form-create-timbre">
+    <div class="container">
 
-      <div class="row">
-        <div class="col col8">
-            <div class="form-input">
-              <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
-            </div>
-            <div class="form-input">
-              <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
-            </div>
-        </div>
-      </div>
+      <form id="form-create-timbre">
 
-      <div class="row">
-        <div class="col col8">
-          <div id="map"></div>
-          <input id="timbre-lat" name="timbre-lat" type="text" value="" />
-          <input id="timbre-long" name="timbre-long" type="text" value="" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col8">
-          <div class="form-submit">
-            <input type="submit" class="button" value="{{_ "timbre-create"}}" />
+        <div class="row">
+          <div class="col col8">
+              <div class="form-input">
+                <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
+              </div>
+              <div class="form-input">
+                <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
+              </div>
           </div>
         </div>
-      </div>
 
-    </form>
+        <div class="row">
+          <div class="col col8">
+            <div id="map"></div>
+            <input id="timbre-lat" name="timbre-lat" type="text" value="" />
+            <input id="timbre-long" name="timbre-long" type="text" value="" />
+          </div>
+
+          <div class="row">
+            <div class="col col8">
+              <div class="form-submit">
+                <input type="submit" class="button" value="{{_ "timbre-create"}}" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
 
   </div>
 

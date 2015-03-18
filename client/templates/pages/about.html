@@ -1,6 +1,6 @@
 <template name="about">
   <div id="toolbar">
-    <div class="container">
+    <div class="wrapper">
 
       <h1 class="u-align-center"><img src="/images/timbre-logo.svg" /></h1>
 
@@ -14,19 +14,23 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrapper">
 
-    <div class="row">
-      <div class="col col4">
-        {{#if notLoggedIn}}
-          <a href="{{pathFor 'login'}}">{{_ "user-login"}}</a>
-        {{else}}
-          Logged in
-        {{/if}}
+    <div class="container">
+
+      <div class="row">
+        <div class="col col4">
+          {{#if notLoggedIn}}
+            <a href="{{pathFor 'login'}}">{{_ "user-login"}}</a>
+          {{else}}
+            Logged in
+          {{/if}}
+        </div>
+        <div class="col col4">
+          <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
+        </div>
       </div>
-      <div class="col col4">
-        <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
-      </div>
+
     </div>
 
   </div>

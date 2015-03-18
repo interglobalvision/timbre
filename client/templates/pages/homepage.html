@@ -1,6 +1,6 @@
 <template name="homepage">
   <div id="toolbar">
-    <div class="container">
+    <div class="wrapper">
 
       <div class="row">
         <div class="col col1">
@@ -9,29 +9,31 @@
           </a>
         </div>
         <div class="col col6 logo-col">
-          <img src="/images/timbre-logo.svg" class="logo"/>
+          <img src="/images/timbre-logo.svg" class="toolbar-logo"/>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrapper">
+    <div class="container">
 
-    <div class="row">
-      {{#each timbres}}
-        <div class="timbre" data-id="{{_id}}">
-          <div class="col col6">
-            <h1>{{name}}</h1>
-            <h2>{{address}}</h2>
+      <div class="row">
+        {{#each timbres}}
+          <div class="timbre" data-id="{{_id}}">
+            <div class="col col6">
+              <h1>{{name}}</h1>
+              <h2>{{address}}</h2>
+            </div>
+            <div class="col col2">
+              &#9825;
+            </div>
           </div>
-          <div class="col col2">
-            &#9825;
-          </div>
-        </div>
-      {{/each}}
+        {{/each}}
+      </div>
+
     </div>
-
   </div>
 
 </template>
