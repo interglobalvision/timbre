@@ -1,5 +1,5 @@
 <template name="createTimbre">
-  <div class="container" id="toolbar">
+  <div id="toolbar">
 
     <div class="row">
       <div class="col col1">
@@ -14,37 +14,41 @@
 
   </div>
 
-  <div class="container">
+  <div class="wrapper">
 
-    <form>
+    <div class="container">
 
-      <div class="row">
-        <div class="col col8">
-            <div class="form-input">
-              <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
-            </div>
-            <div class="form-input">
-              <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
-            </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col8">
-          <div id="map"></div>
-          <input id="timbre-location" type="text" value="" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col8">
-          <div class="form-submit">
-            <input type="submit" class="button" value="{{_ "timbre-create"}}" />
+      <form>
+        
+        <div class="row">
+          <div class="col col8">
+              <div class="form-input">
+                <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
+              </div>
+              <div class="form-input">
+                <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
+              </div>
           </div>
         </div>
-      </div>
 
-    </form>
+        <div class="row">
+          <div class="col col8">
+            <div id="map"></div>
+            <input id="timbre-location" type="text" value="" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col8">
+            <div class="form-submit">
+              <input type="submit" class="button" value="{{_ "timbre-create"}}" />
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
 
   </div>
 
