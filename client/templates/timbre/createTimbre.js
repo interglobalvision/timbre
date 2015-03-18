@@ -10,7 +10,19 @@ Template.createTimbre.onRendered(function() {
       L.mapbox.accessToken = 'pk.eyJ1IjoiaW50ZXJnbG9iYWx2aXNpb24iLCJhIjoiVWJ4c3pFayJ9.uetYP9xe-j0wqh4oUN3WxA';
       var map = L.mapbox.map('map', 'interglobalvision.lgbm61l6');
       map.setView(startLocation, 17);
-      map.locate();
+
+      if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log(position);
+          map.setView([position.coords.latitude, position.coords.longitude], 17);
+        }, function(error) {
+          console.log(error);
+        }, {
+          enableHighAccuracy: true,
+          maximumAge : 30000,
+          timeout : 27000
+        });
+      }
 
       var marker = L.marker(startLocation);
       marker.addTo(map);
