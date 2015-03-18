@@ -54,7 +54,7 @@ Template.createTimbre.events = {
       if (error) {
         console.log(error);
       } else {
-        alert(result);
+        Router.go('/');
       }
     });
   }
