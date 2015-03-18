@@ -15,4 +15,5 @@ momentjs:moment
 stylus
 tap:i18n
 msavin:mongol
-fuatsengul:leaflet
+pauloborges:mapbox@2.1.4_3
+jquery
