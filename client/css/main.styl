@@ -27,6 +27,9 @@ html
 
 // TYPOGRAPHY
 
+$font-light = 'WorkSansLight', sans-serif
+$font-bold = 'WorkSansBold', sans-serif
+
 $font-size-basic = 19px
 $font-leading-basic = 1.4em
 
@@ -35,7 +38,7 @@ $font-size-h2 = 30px
 $font-size-h3 = 14px
 
 html
-  font-family: 'WorkSansLight', sans-serif
+  font-family: $font-light
   font-size: $font-size-basic
   line-height: $font-leading-basic
 
@@ -48,6 +51,7 @@ h2
   font-size: $font-size-h2
 
 h3
+  font-family: $font-bold
   font-size: $font-size-h3
   background-color: $color-dark-gray
   padding: $margin-tiny $margin-small
@@ -87,10 +91,7 @@ form
 
 input
   margin-bottom: $margin-small
-  &:focus
-    outline: 0
-
-input
+  font-family: $font-light
   box-sizing: border-box
   padding: $margin-small
   border-radius: 4px
@@ -98,6 +99,8 @@ input
   font-size: 1em
   border: solid $border-width $color-gray
   cursor: pointer
+  &:focus
+    outline: 0
 
 ::-webkit-input-placeholder
   text-align: right
@@ -107,7 +110,7 @@ input:-moz-placeholder
 
 input.button
   border-width: 0 0 $border-width 0
-  font-weight: 700
+  font-family: $font-bold
 
 // SETTINGS
 
