@@ -22,6 +22,7 @@
 
   "user-username": "Username",
   "user-password": "Password",
+  "user-repeat-password": "Repeat Password",
   "user-email": "Email",
   "user-login": "Login",
   "user-forgot": "Forgot Password?",
