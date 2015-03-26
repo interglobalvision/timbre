@@ -1,6 +1,6 @@
 // STRUCUTRE
 
-$margin-small = 10px
+$margin-small = 12px
 $margin-tiny = ($margin-small/2)
 $margin-basic = ($margin-small*2)
 $margin-large = ($margin-small*5)
@@ -20,7 +20,8 @@ $color-black-soft = rgb(14,14,14)
 $color-white-soft = rgb(253,253,253)
 $color-white-smoke = rgb(247, 247, 247)
 
-$color-gray = gray
+$color-light-gray = rgb(204,204,204)
+$color-gray = rgb(132,132,132)
 $color-dark-gray = rgb(100,100,100)
 
 $color-light-green = rgb(245, 250, 248)
@@ -41,16 +42,20 @@ $font-bold = 'WorkSansBold', sans-serif
 $font-size-basic = 18px
 $font-leading-basic = 1.4em
 
-$font-size-h1 = 18px
-$font-size-h2 = 18px
-$font-size-h3 = 13px
+$font-size-h1 = 21px
+$font-size-h2 = 21px
+$font-size-h3 = 15px
 
 html
   font-family: $font-light
   font-size: $font-size-basic
   line-height: $font-leading-basic
+  letter-spacing: .02em
+  
+input, textarea, keygen, select, button
+  letter-spacing: .02em
 
-  // HEADINGS
+// HEADINGS
 
 h1
   font-size: $font-size-h1
@@ -61,32 +66,38 @@ h2
 h3
   font-family: $font-semibold
   font-size: $font-size-h3
-  background-color: $color-dark-gray
+  background-color: $color-gray
   padding: $margin-tiny $margin-small
   color: $color-white-soft
   text-transform: uppercase
 
 h1,h2,h3,h4,h5,h6
   line-height: $font-leading-basic
-  
-.icon
-  height: 40px
 
-  // LINKS
+// LINKS
 
 a,a:active,a:visited
   color:inherit
   text-decoration: none
-  transition:opacity .2s
-  &:hover
-    opacity:.5
+    
+// ICONS
+    
+.icon
+  height: 18px
+  padding-top: 4px
+  float: right
+  
+.logo 
+  margin: $margin-basic auto
+  width: 140px
 
 // TOOLBAR
 
 #toolbar
   padding: $margin-small 0
-  border-bottom: solid $border-width $color-dark-gray
+  border-bottom: solid $border-width $color-light-gray
   background-color: $color-light-green
+  text-transform: uppercase
   .col
     text-align: center
 
@@ -107,7 +118,7 @@ input
   border-radius: 4px
   width: 100%
   font-size: 1em
-  border: solid $border-width $color-gray
+  border: solid $border-width $color-light-gray
   cursor: pointer
   &:focus
     outline: 0
@@ -120,22 +131,23 @@ input:-moz-placeholder
 
 input.button
   border-width: 0 0 $border-width*2 0
+  border-color: $color-gray
   font-family: $font-bold
 
 // SETTINGS
 
-.settings-button
+a.settings-button
   padding: $margin-small
   margin-bottom: $margin-small
-  border: solid $color-gray
+  border: solid $color-light-gray
   border-width: $border-width 0
   display: block
-  text-transform: uppercase
-  .genericon
-    float: right
+  text-transform: uppercase 
+  color: $color-gray
 
 // CREATE TIMBRE
 
 #map
   height: 0
   transition: height $speed-basic
+  margin-bottom: $margin-small

@@ -1,9 +1,9 @@
 <template name="signup">
   <div id="toolbar">
-    <div class="container">
+    <div class="wrapper">
       <div class="row">
         <nav class="col col1">
-          <a href="{{pathFor 'login'}}"><span class="genericon genericon-previous"></span></a>
+          <a href="{{pathFor 'login'}}"><img src="/icons/timbre_icon-back.svg" class="icon"/></a>
         </nav>
         <div class="col col6 u-align-center">
           {{_ "user-signup"}}
@@ -12,28 +12,35 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrapper">
 
-    <h1 class="u-align-center"><img src="/images/timbre-logo.svg" /></h1>
+    <div class="container">
 
-    <div class="row">
-      <div class="col col8">
-        <form>
-          <div class="form-input">
-            <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
-          </div>
-          <div class="form-input">
-            <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
-          </div>
-          <div class="form-input">
-            <input id="password" type="password" value="" placeholder="{{_ "user-password"}}" />
-          </div>
+      <h1 class="u-align-center"><img src="/images/timbre-logo.svg" class="logo" alt="Timbre"/></h1>
 
-          <div class="form-submit">
-            <input type="submit" class="button" value="{{_ "user-signup"}}" />
-          </div>
-        </form>
+      <div class="row">
+        <div class="col col8">
+          <form>
+            <div class="form-input">
+              <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
+            </div>
+            <div class="form-input">
+              <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
+            </div>
+            <div class="form-input">
+              <input id="password" type="password" value="" placeholder="{{_ "user-password"}}" />
+            </div>
+            <div class="form-input">
+              <input id="repeat-password" type="password" value="" placeholder="{{_ "user-repeat-password"}}" />
+            </div>
+
+            <div class="form-submit">
+              <input type="submit" class="button" value="{{_ "user-signup"}}" />
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
 
   </div>

@@ -1,9 +1,9 @@
 <template name="login">
   <div id="toolbar">
-    <div class="container">
+    <div class="wrapper">
       <div class="row">
         <nav class="col col1">
-          <a href="/"><span class="genericon genericon-previous"></span></a>
+          <a href="/"><img src="/icons/timbre_icon-back.svg" class="icon"/></a>
         </nav>
         <div class="col col6 u-align-center">
           {{_ "user-login"}}
@@ -12,38 +12,42 @@
     </div>
   </div>
   
-  <div class="container">
+  <div class="wrapper">
 
-    <h1 class="u-align-center"><img src="/images/timbre-logo.svg" /></h1>
+    <div class="container">
 
-    <div class="row">
-      <div class="col col8">
-        <form>
-          <div class="form-input">
-            <input id="username" type="text" value="" placeholder="{{_ "user-username"}}"/>
-          </div>
-          <div class="form-input">
-            <input id="password" type="password" value="" placeholder="{{_ "user-password"}}"/>
-          </div>
+      <h1 class="u-align-center"><img src="/images/timbre-logo.svg" class="logo" alt="Timbre"/></h1>
 
-          <div class="form-submit">
-            <input type="submit" class="button" value="{{_ "user-login"}}" />
-          </div>
-        </form>
+      <div class="row">
+        <div class="col col8">
+          <form>
+            <div class="form-input">
+              <input id="username" type="text" value="" placeholder="{{_ "user-username"}}"/>
+            </div>
+            <div class="form-input">
+              <input id="password" type="password" value="" placeholder="{{_ "user-password"}}"/>
+            </div>
+
+            <div class="form-submit">
+              <input type="submit" class="button" value="{{_ "user-login"}}" />
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
 
-  </div>
+    <div class="container">
 
-  <div class="container">
+      <div class="row">
+        <div class="col col4">
+          <a href="/forgot">{{_ "user-forgot"}}</a>
+        </div>
+        <div class="col col4">
+          <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
+        </div>
+      </div>
 
-    <div class="row">
-      <div class="col col4">
-        <a href="/forgot">{{_ "user-forgot"}}</a>
-      </div>
-      <div class="col col4">
-        <a href="{{pathFor 'signup'}}">{{_ "user-signup"}}</a>
-      </div>
     </div>
 
   </div>
