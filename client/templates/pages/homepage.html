@@ -22,18 +22,20 @@
     {{#each timbres}}
       <div class="row">
         <div class="timbre" data-id="{{_id}}">
-          <div class="u-holder">
-            <div class="u-held">
-              <div class="col col7">
+          <div class="col col7">
+            <div class="u-holder">
+              <div class="u-held">
                 <h1>{{name}}</h1>
                 <span class="address">{{address}}</span>
                 <!--{{location.coordinates}}-->
               </div>
-              <div class="col col1 u-align-center">
+            </div>
+          </div>
+          <div class="col col1 u-align-center">
+            <div class="u-holder">
+              <div class="u-held">
                 <a class="fav-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="heart" viewBox="0 0 100 100">
-                    <path d="M78.168 6.633c-19.744-2.707-27.483 13.69-28.242 15.353-.76-1.662-8.497-18.06-27.976-15.353C4.055 9.443-8.69 34.913 7.29 51.23 21.05 65.544 49.972 93.667 49.972 93.667s29.093-28.123 42.856-42.44C108.542 34.915 96.06 9.444 78.167 6.634z"/>
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" class="heart" viewBox="0 0 100 100"><path d="M67.667 23.5c-12.347-1.834-17.234 8.57-17.71 9.658-.474-1.087-5.36-11.492-17.708-9.658C20.914 25.184 13 41.25 23.002 51.574 31.643 60.49 50 78.34 50 78.34s18.274-17.85 26.913-26.766C86.917 41.25 79 25.184 67.667 23.5z"/></svg>
                 </a>
               </div>
             </div>
