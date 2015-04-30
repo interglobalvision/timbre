@@ -22,7 +22,10 @@ Template.login.rendered = function(){
 	skyHeight,
 	buildingHeight,
 	buildingWidth,
-	buildingScale;
+	buildingScale,
+	buildingCenter,
+	buildingLeft,
+	buildingMargin = 30;
 
 	resizeScene = function() {
 		skyHeight = winHeight - $street.outerHeight();
@@ -33,7 +36,13 @@ Template.login.rendered = function(){
 		$building.css({
 			'height': buildingHeight*buildingScale,
 			'width': buildingWidth*buildingScale,
-			'margin-left': -((buildingWidth*buildingScale)/2),
+		});
+		buildingWidth = $building.width();
+		buildingCenter = -(buildingWidth/2);
+		buildingLeft = buildingCenter-buildingWidth-buildingMargin;
+		$building.each(function() {
+			$(this).css('margin-left', buildingLeft);
+			buildingLeft += buildingWidth+buildingMargin;
 		});
 	}
 
