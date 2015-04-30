@@ -34,7 +34,6 @@ Template.login.rendered = function(){
 			windowRowTop += 15;
 		});
 	});
-		
 
 	$(window).on('resize', function() {
 		winHeight = $(window).height();

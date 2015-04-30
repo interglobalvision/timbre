@@ -139,17 +139,19 @@ input.button
   
 // HOMEPAGE
 .timbre 
+  height: 100px
   box-sizing: border-box
   padding: $margin-small
   border-bottom: 1px solid $color-light-gray
-  
-.fav-col
-  height: 100%
+  h1
+    font-family: $font-bold
     
 svg.heart 
   width: 20px 
   path
-    fill: $color-light-pink
+    fill: $color-white-smoke
+    stroke: $color-gray
+    stroke-width: 2px
 
 // SETTINGS
 
@@ -178,9 +180,9 @@ a.settings-button
   opacity: 0
   height: 0
   -webkit-animation-name: login-open
-  -webkit-animation-duration: 1s
+  -webkit-animation-duration: .7s
   -webkit-animation-delay: 4.5s
-  -webkit-animation-timing-function: linear
+  -webkit-animation-timing-function: ease-out
   -webkit-animation-fill-mode: forwards
 
 
@@ -304,6 +306,7 @@ a.settings-button
   -webkit-animation-duration: 2s
   -webkit-animation-delay: .5s
   -webkit-animation-timing-function: linear
+  -webkit-animation-fill-mode: forwards
   
 .note
   display: block
@@ -318,17 +321,17 @@ a.settings-button
 @keyframes music {
   0% { 
     opacity: 0
-    transform: rotate(5deg)
+    transform: rotate(6deg)
     top: 60%
   }
   50% {
     opacity: 1
-    transform: rotate(-5deg)
+    transform: rotate(-7deg)
     top: 34%
   }
   100% {
     opacity: 0
-    transform: rotate(5deg)
+    transform: rotate(4deg)
     top: 12%
   }
 }
