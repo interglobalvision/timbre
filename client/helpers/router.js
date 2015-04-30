@@ -92,7 +92,7 @@ Router.map(function() {
                 type: 'Point',
                 coordinates: coords
               },
-              $maxDistance: 40,
+              $maxDistance: 25,
             },
           }
         })
