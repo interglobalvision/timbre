@@ -19,22 +19,26 @@
   <div class="wrapper">
     <div class="container">
 
-      <div class="row">
-        {{#each timbres}}
-          <div class="timbre" data-id="{{_id}}">
-            <div class="col col6">
-              <h1>{{name}}</h1>
-              <h2>{{address}}</h2>
-              {{location.coordinates}}
-            </div>
-            <div class="col col2">
-              &#9825;
-            </div>
+    {{#each timbres}}
+      <div class="timbre row" data-id="{{_id}}">
+        <div class="col col7">
+          <h1>{{name}}</h1>
+          <h2>{{address}}</h2>
+          {{location.coordinates}}
+        </div>
+        <div class="col col1 u-align-center fav-col">
+          <div class="u-holder">
+            <a class="fav-button u-held">
+              <svg xmlns="http://www.w3.org/2000/svg" class="heart" viewBox="0 0 100 100">
+                <path d="M78.168 6.633c-19.744-2.707-27.483 13.69-28.242 15.353-.76-1.662-8.497-18.06-27.976-15.353C4.055 9.443-8.69 34.913 7.29 51.23 21.05 65.544 49.972 93.667 49.972 93.667s29.093-28.123 42.856-42.44C108.542 34.915 96.06 9.444 78.167 6.634z"/>
+              </svg>
+            </a>
           </div>
-        {{else}}
-          <p>No hay timbres cerca :/</p>
-        {{/each}}
+        </div>
       </div>
+    {{else}}
+      <p>No hay timbres cerca :/</p>
+    {{/each}}
 
     </div>
   </div>
