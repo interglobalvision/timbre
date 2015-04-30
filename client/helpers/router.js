@@ -80,22 +80,22 @@ Router.map(function() {
         navigator.geolocation.getCurrentPosition( function(position) {
           Session.set('lng', position.coords.longitude);
           Session.set('lat', position.coords.latitude);
-        });
-        console.log('long', Session.get('lng') );
-        console.log('lat', Session.get('lat') );
-        var coords = [ Session.get('lng'), Session.get('lat')];
-        console.log(coords);
-        return Timbres.find({
-          location: {
-            $near: {
-              $geometry: {
-                type: 'Point',
-                coordinates: coords
+          console.log('long', Session.get('lng') );
+          console.log('lat', Session.get('lat') );
+          var coords = [ Session.get('lng'), Session.get('lat')];
+          console.log(coords);
+          return Timbres.find({
+            location: {
+              $near: {
+                $geometry: {
+                  type: 'Point',
+                  coordinates: coords
+                },
+                $maxDistance: 25,
               },
-              $maxDistance: 25,
-            },
-          }
-        })
+            }
+          })
+        });
       }
     }
   });
