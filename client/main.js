@@ -13,7 +13,8 @@ Template.login.rendered = function(){
 	$holder = $('.login-holder'),
 	$street = $('.street'),
 	$building = $('.building'),
-	$cone = $('#cone'),
+	$coneA = $('.coneA'),
+	$coneB = $('.coneB'),
 	$circle = $('#circle'),
 	$form = $('.login-form'),
 	$music = $('.music'),
@@ -33,22 +34,6 @@ Template.login.rendered = function(){
 			windowRowTop += 15;
 		});
 	});
-
-	$music.addClass('show-hide');
-
-	var buildingWinHeight = $('.window').height();
-
-	$music.animate({'top': '10%'}, 2000, function() {
-		$cone.animate({'opacity': 0}, 1000, function() {
-			$cone.appendTo('.open-window').css('top', (buildingWinHeight/2));
-			$cone.animate({'opacity': 1}, 1000, function() {
-				var formHeight = $form.css('height', 'auto').height();
-				$form.css('height',0);
-				$form.animate({'height': formHeight, 'opacity': 1}, 1000);
-			})
-		});
-	})
-		
 
 	$(window).on('resize', function() {
 		winHeight = $(window).height();

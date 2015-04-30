@@ -99,7 +99,7 @@ a,a:active,a:visited
 #toolbar
   padding: $margin-small 0
   border-bottom: solid $border-width $color-light-gray
-  background-color: $color-light-green
+  background-color: $color-light-blue
   text-transform: uppercase
   .col
     text-align: center
@@ -136,6 +136,22 @@ input.button
   border-width: 0 0 $border-width*2 0
   border-color: $color-gray
   font-family: $font-bold
+  
+// HOMEPAGE
+.timbre 
+  height: 100px
+  box-sizing: border-box
+  padding: $margin-small
+  border-bottom: 1px solid $color-light-gray
+  h1
+    font-family: $font-bold
+    
+svg.heart 
+  width: 20px 
+  path
+    fill: $color-white-smoke
+    stroke: $color-gray
+    stroke-width: 2px
 
 // SETTINGS
 
@@ -158,10 +174,17 @@ a.settings-button
 // LOGIN SCENE
 .login-logo
   margin: 0 auto
+  
 .login-form
-  height: 0
   overflow: hidden
   opacity: 0
+  height: 0
+  -webkit-animation-name: login-open
+  -webkit-animation-duration: .7s
+  -webkit-animation-delay: 4.5s
+  -webkit-animation-timing-function: ease-out
+  -webkit-animation-fill-mode: forwards
+
 
 #login-scene
   background-color: $color-light-blue
@@ -188,11 +211,28 @@ a.settings-button
   left: 0
   position: absolute
   
-#cone 
+.cone 
   width: 25px
   position: absolute
+  
+.cone-a
   top: -55px
   left: 50%
+  -webkit-animation-name: cone-fade-out
+  -webkit-animation-duration: 1s
+  -webkit-animation-delay: 2.5s
+  -webkit-animation-timing-function: linear
+  -webkit-animation-fill-mode: forwards
+  
+.cone-b
+  bottom: -10px
+  left: 70%
+  opacity: 0
+  -webkit-animation-name: cone-fade-in
+  -webkit-animation-duration: 1s
+  -webkit-animation-delay: 3.5s
+  -webkit-animation-timing-function: linear
+  -webkit-animation-fill-mode: forwards
   
 #circle 
   width: 36px
@@ -262,25 +302,11 @@ a.settings-button
   top: 60%
   opacity: 0
   left: 50%
-  -webkit-animation-name: show-hide
+  -webkit-animation-name: music
   -webkit-animation-duration: 2s
-  -webkit-animateion-delay: .2s
+  -webkit-animation-delay: .5s
   -webkit-animation-timing-function: linear
-  
-@keyframes show-hide {
-  0% { 
-    opacity: 0
-    transform: rotate(5deg)
-  }
-  50% {
-    opacity: 1
-    transform: rotate(-5deg)
-  }
-  100% {
-    opacity: 0
-    transform: rotate(5deg)
-  }
-}
+  -webkit-animation-fill-mode: forwards
   
 .note
   display: block
@@ -291,4 +317,55 @@ a.settings-button
   &:nth-child(3n) 
     margin-left: 10px
     tranform: rotate(-10deg)
+    
+@keyframes music {
+  0% { 
+    opacity: 0
+    transform: rotate(6deg)
+    top: 60%
+  }
+  50% {
+    opacity: 1
+    transform: rotate(-7deg)
+    top: 34%
+  }
+  100% {
+    opacity: 0
+    transform: rotate(4deg)
+    top: 12%
+  }
+}
+
+@keyframes cone-fade-out {
+  0% { 
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+  
+@keyframes cone-fade-in {
+  0% { 
+    opacity: 0
+    left: 70%
+  }
+  100% {
+    opacity: 1
+    left: 50%
+  }
+}
+
+@keyframes login-open {
+  0% { 
+    opacity: 0
+    height: 0
+  }
+  100% {
+    opacity: 1
+    height: 280px
+  }
+}
+
+
 
