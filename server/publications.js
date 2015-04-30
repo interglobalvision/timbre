@@ -17,3 +17,7 @@ Meteor.publish('allItems', function() {
 Meteor.publish('singleItem', function(id) {
   return Items.find(id);
 });
+
+Meteor.publish('timbres', function(){
+  return Timbres.find();
+});
