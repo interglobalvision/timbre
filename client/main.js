@@ -18,11 +18,23 @@ Template.login.rendered = function(){
 	$circle = $('#circle'),
 	$form = $('.login-form'),
 	$music = $('.music'),
-	$note = $('.note');
+	$note = $('.note'),
+	skyHeight,
+	buildingHeight,
+	buildingWidth,
+	buildingScale;
 
 	resizeScene = function() {
+		skyHeight = winHeight - $street.outerHeight();
+		buildingHeight = $building.height();
+		buildingWidth = $building.width();
+		buildingScale = skyHeight / buildingHeight;
 		$holder.height(winHeight + 'px');
-		$building.height(winHeight - $street.outerHeight());
+		$building.css({
+			'height': buildingHeight*buildingScale,
+			'width': buildingWidth*buildingScale,
+			'margin-left': -((buildingWidth*buildingScale)/2),
+		});
 	}
 
 	resizeScene();
