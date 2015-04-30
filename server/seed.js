@@ -37,20 +37,40 @@ if (Timbres.find().count() === 0) {
     luis = Meteor.users.findOne({ 'emails.address': 'luis@interglobal.vision' });
 
   Timbres.insert({
-    name: "CHAVVOS420",
+    name: "Mansioncita",
     location: {
       type: "Point",
-      coordinates: [ -99.1490657, 19.4313399 ]
+      coordinates: [ -99.162956, 19.409738 ]
     },
-    address: "Ayuntamiento 132 - 15, Col. Centro, Cuauhtémoc, DF",
+    address: "Nayarit 45, Col. Roma",
     users: [ globie._id ]
   });
 
   Timbres.insert({
-    name: "Casaa de Hugo",
+    name: "Vecino de Mansioncita",
     location: {
       type: "Point",
-      coordinates: [ -99.152845, 19.427591 ]
+      coordinates: [ -99.162956, 19.409738 ]
+    },
+    address: "Nayarit 43, Col. Roma",
+    users: [ globie._id ]
+  });
+
+  Timbres.insert({
+    name: "DOGO",
+    location: {
+      type: "Point",
+      coordinates: [ -99.162248, 19.409865 ]
+    },
+    address: "Monterrey 259, Col. Roma",
+    users: [ globie._id ]
+  });
+
+  Timbres.insert({
+    name: "CHAVVOS420",
+    location: {
+      type: "Point",
+      coordinates: [ -99.1490657, 19.4313399 ]
     },
     address: "Ayuntamiento 132 - 15, Col. Centro, Cuauhtémoc, DF",
     users: [ globie._id ]
