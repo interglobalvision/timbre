@@ -10,6 +10,7 @@ Global client-side code. Loads last.
 
 Template.login.rendered = function(){
 	var winHeight = $(window).height(),
+	winWidth = $(window).width(),
 	$holder = $('.login-holder'),
 	$street = $('.street'),
 	$building = $('.building'),
@@ -20,6 +21,7 @@ Template.login.rendered = function(){
 	$music = $('.music'),
 	$note = $('.note'),
 	skyHeight,
+	streetHeight,
 	buildingHeight,
 	buildingWidth,
 	buildingScale,
@@ -28,22 +30,33 @@ Template.login.rendered = function(){
 	buildingMargin = 30;
 
 	resizeScene = function() {
-		skyHeight = winHeight - $street.outerHeight();
+		streetHeight = $street.outerHeight();
+		$street.removeAttr('viewBox');
+		$street.attr('viewBox','0 0 ' + winWidth + ' ' + streetHeight);
+		$street.attr('width', winWidth);
+		console.log('0 0 ' + winWidth + ' ' + streetHeight);
+
+		skyHeight = winHeight - streetHeight;
 		buildingHeight = $building.height();
 		buildingWidth = $building.width();
 		buildingScale = skyHeight / buildingHeight;
+
 		$holder.height(winHeight + 'px');
+
 		$building.css({
 			'height': buildingHeight*buildingScale,
 			'width': buildingWidth*buildingScale,
 		});
+
 		buildingWidth = $building.width();
 		buildingCenter = -(buildingWidth/2);
 		buildingLeft = buildingCenter-buildingWidth-buildingMargin;
+
 		$building.each(function() {
 			$(this).css('margin-left', buildingLeft);
 			buildingLeft += buildingWidth+buildingMargin;
 		});
+
 	}
 
 	resizeScene();
@@ -57,6 +70,7 @@ Template.login.rendered = function(){
 	});
 
 	$(window).on('resize', function() {
+		winWidth = $(window).width();
 		winHeight = $(window).height();
 		resizeScene();
 	});
