@@ -82,19 +82,19 @@ Router.map(function() {
           Session.set('lat', position.coords.latitude);
           console.log('long', Session.get('lng') );
           console.log('lat', Session.get('lat') );
-          var coords = [ Session.get('lng'), Session.get('lat')];
-          console.log(coords);
-          return Timbres.find({
-            location: {
-              $near: {
-                $geometry: {
-                  type: 'Point',
-                  coordinates: coords
-                },
-                $maxDistance: 25,
+        });
+        var coords = [ Session.get('lng'), Session.get('lat')];
+        console.log(coords);
+        return Timbres.find({
+          location: {
+            $near: {
+              $geometry: {
+                type: 'Point',
+                coordinates: coords
               },
-            }
-          })
+              $maxDistance: 25,
+            },
+          }
         });
       }
     }
