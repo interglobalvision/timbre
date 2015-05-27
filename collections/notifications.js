@@ -21,3 +21,5 @@ Notifications.allow({
     return can.removeItem(userId, doc);
   }
 });
+
+
