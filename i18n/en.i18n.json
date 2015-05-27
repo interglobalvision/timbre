@@ -12,6 +12,7 @@
 
   "settings-password": "Password",
   "settings-change": "Change",
+  "settings-old-password": "Old Password",
   "settings-new-password": "New Password",
   "settings-new-password-again": "New Password Again",
 
