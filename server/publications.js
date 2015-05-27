@@ -27,3 +27,7 @@ Meteor.publish('timbres', function(args){
     return Timbres.find({}, { limit: 1 });
   }
 });
+
+Meteor.publish('notifications', function(userId){
+  return Notifications.find({userId: userId});
+});
