@@ -2,25 +2,13 @@
 
 ## Publications ##
 
-All publications-related code. 
+All publications-related code.
 
 /+ ---------------------------------------------------- */
 
-// Publish all items
-
-Meteor.publish('allItems', function() {
-  return Items.find();
-});
-
-// Publish a single item
-
-Meteor.publish('singleItem', function(id) {
-  return Items.find(id);
-});
-
 Meteor.publish('timbres', function(args){
   if( args.coords[0] !== null ) {
-    console.log(args.coords);
+//     console.log(args.coords);
     return Timbres.find({
       location: {
         $near: {
@@ -34,7 +22,12 @@ Meteor.publish('timbres', function(args){
     }, {
       limit: 5
     });
-  } else {
-    return Timbres.find({}, { limit: 0 });
   }
+ else {
+    return Timbres.find({}, { limit: 1 });
+  }
+});
+
+Meteor.publish('notifications', function(userId){
+  return Notifications.find({userId: userId});
 });
