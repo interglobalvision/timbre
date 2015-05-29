@@ -20,6 +20,8 @@ Notifications.find().observeChanges({
       if (Notification.permission === 'granted') {
         var notificationText = 'BRING BRING!!! Your Timbre "' +  fields.timbreName +  '" is ringing!';
         var notification = new Notification(notificationText);
+      } else {
+        Notification.requestPermission();
       }
 
       Notifications.update(id, {$set: {read: true}});
