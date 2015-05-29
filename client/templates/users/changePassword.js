@@ -28,6 +28,7 @@ Template.changePassword.events = {
 			        } else {
 			          console.log('Your password has been changed.');
 					    	// flash('Your passwords has been changed.');
+					  		Router.go('/settings.html');
 			        }
 			      });
 			    } else {
