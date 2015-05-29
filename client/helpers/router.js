@@ -102,7 +102,12 @@ Router.map(function() {
     }
   });
 
-  this.route('settings');
+  this.route('settings', {
+    path: '/settings',
+    waitOn: function() {
+      return Meteor.subscribe('userTimbres', Meteor.userId() );
+    },
+  });
 
   this.route('changePassword', {
     path: '/change-password',
