@@ -34,7 +34,6 @@ Meteor.methods({
   },
 
   checkPassword: function(digest) {
-    check(digest, String);
 
     if (this.userId) {
       var user = Meteor.user();

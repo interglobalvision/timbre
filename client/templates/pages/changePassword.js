@@ -1,13 +1,3 @@
-if (Accounts._resetPasswordToken) {
-  Session.set('resetPassword', Accounts._resetPasswordToken);
-}
-
-Template.changePassword.helpers({
- resetPassword: function(){
-  return Session.get('resetPassword');
- }
-});
-
 Template.changePassword.events = {
 	'click input[type=submit]': function(event){
     event.preventDefault();
@@ -31,14 +21,13 @@ Template.changePassword.events = {
 		    	console.log('new password is valid');
 		    	if (areSimilarPasswords(passwords.newPassword, passwords.newAgain)) {
 		    		console.log('new passwords are similar');
-		    		Accounts.resetPassword(Session.get('resetPassword'), passwords.newPassword, function(error) {
+		    		Accounts.changePassword(passwords.oldPassword, passwords.newPassword, function(error) {
 			    		if (error) {
 			          console.log('We are sorry but something went wrong.');
 			          // flash('We are sorry but something went wrong.');
 			        } else {
 			          console.log('Your password has been changed.');
 					    	// flash('Your passwords has been changed.');
-			          Session.set('resetPassword', null);
 			        }
 			      });
 			    } else {
