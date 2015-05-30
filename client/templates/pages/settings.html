@@ -28,11 +28,23 @@
 
       {{#each userTimbres}}
       <div class="row">
-        <div class="col col6">
-          {{name}}
-        </div>
-        <div class="col col2">
-          <a href="/timbre/edit/{{_id}}"><img src="/icons/timbre_icon-pencil.svg" class="icon"/></a>
+        <div class="timbre" data-id="{{_id}}">
+          <div class="col col7">
+            <div class="u-holder">
+              <div class="u-held">
+                <h1>{{name}}</h1>
+                <span class="address">{{address}}</span>
+                <!--{{location.coordinates}}-->
+              </div>
+            </div>
+          </div>
+          <div class="col col1 u-align-center">
+            <div class="u-holder">
+              <div class="u-held">
+                <a href="/timbre/edit/{{_id}}"><img src="/icons/timbre_icon-pencil.svg" class="icon"/></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {{/each}}
