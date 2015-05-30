@@ -105,9 +105,13 @@ Router.map(function() {
   this.route('settings', {
     path: '/settings',
     waitOn: function() {
-      var currentUserId = Meteor.userId();
-      return Meteor.subscribe('userTimbres', currentUserId );
+      return Meteor.subscribe('userTimbres', Meteor.userId() );
     },
+    data: {
+      userTimbres: function(){
+        return Timbres.find({users: Meteor.userId()});
+      }
+    }
   });
 
   this.route('changePassword', {
