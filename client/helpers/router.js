@@ -105,7 +105,8 @@ Router.map(function() {
   this.route('settings', {
     path: '/settings',
     waitOn: function() {
-      return Meteor.subscribe('userTimbres', Meteor.userId() );
+      var currentUserId = Meteor.userId();
+      return Meteor.subscribe('userTimbres', currentUserId );
     },
   });
 
