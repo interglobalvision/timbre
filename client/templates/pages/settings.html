@@ -26,11 +26,10 @@
 
     <div class="container">
 
-      **List timbres associated with user**
       {{#each userTimbres}}
       <div class="row">
         <div class="col col6">
-          {{_id}}
+          {{name}}
         </div>
         <div class="col col2">
           <a href="/timbre/edit/{{_id}}"><img src="/icons/timbre_icon-pencil.svg" class="icon"/></a>
