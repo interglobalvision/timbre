@@ -21,6 +21,9 @@
   "timbre-name": "Timbre Name",
   "timbre-address-optional": "Timbre Address (optional)",
 
+  "timbre-edit-timbre": "Edit Timbre",
+  "timbre-edit-update": "Update",
+
   "user-username": "Username",
   "user-password": "Password",
   "user-repeat-password": "Repeat Password",
