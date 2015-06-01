@@ -22,15 +22,16 @@
 
     <div class="container">
 
+    {{#with timbre}}
       <form id="form-create-timbre">
 
         <div class="row">
           <div class="col col8">
               <div class="form-input">
-                <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
+                <input id="timbre-name" name="timbre-name" type="text" value="{{name}}" placeholder="{{_ "timbre-name"}}" />
               </div>
               <div class="form-input">
-                <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
+                <input id="timbre-address" name="timbre-address" type="text" value="{{address}}" placeholder="{{_ "timbre-address-optional"}}" />
               </div>
           </div>
         </div>
@@ -38,8 +39,8 @@
         <div class="row">
           <div class="col col8">
             <div id="map" class="map"></div>
-            <input id="timbre-lat" name="timbre-lat" type="text" value="" />
-            <input id="timbre-long" name="timbre-long" type="text" value="" />
+            <input id="timbre-lat" name="timbre-lat" type="text" value="{{location.coordinates.[1]}}" />
+            <input id="timbre-long" name="timbre-long" type="text" value="{{location.coordinates.[0]}}" />
           </div>
 
           <div class="row">
@@ -52,6 +53,7 @@
         </div>
 
       </form>
+    {{/with}}
 
     </div>
 
