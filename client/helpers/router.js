@@ -128,8 +128,14 @@ Router.map(function() {
 
   this.route('editTimbre', {
     path: '/timbre/edit/:_id',
-    waitOn: function () {},
-    data: function () {}
+    waitOn: function () {
+      return Meteor.subscribe('singleTimbre', this.params._id);
+    },
+    data: function () {
+      return {
+        timbre: Timbres.findOne(this.params._id)
+      }
+    }
   });
 
   // Users
