@@ -33,12 +33,13 @@ Meteor.methods({
     });
   },
 
-  editTimbre: function (id, data) {
+  editTimbre: function (data) {
 
     var name = data[0].value,
       address = data[1].value,
       lat = data[2].value,
-      lng = data[3].value;
+      lng = data[3].value,
+      id = data[4];
 
     // Check argument types
     check(name, String);
@@ -47,20 +48,14 @@ Meteor.methods({
     lat = parseFloat(lat);
     lng = parseFloat(lng);
 
-/*
-    console.log(name);
-    console.log(address);
-    console.log(lat);
-    console.log(lng);
-    console.log(Meteor.user()._id);
-*/
-
-    return Timbres.insert({
-      name: name,
-      address: address,
-      location: {
-        type: "Point",
-        coordinates: [lng, lat]
+    return Timbres.update(id, {
+      $set: {
+        name: name,
+        address: address,
+        location: {
+          type: "Point",
+          coordinates: [lng, lat]
+        }
       }
     });
   },
