@@ -28,6 +28,10 @@ Meteor.publish('timbres', function(args){
   }
 });
 
+Meteor.publish('singleTimbre', function(id) {
+  return Timbres.find(id);
+});
+
 Meteor.publish('userTimbres', function(userId){
   return Timbres.find({users: userId});
 });
