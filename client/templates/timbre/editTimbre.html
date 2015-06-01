@@ -1,0 +1,60 @@
+<template name="editTimbre">
+  <div id="toolbar">
+
+    <div class="wrapper">
+
+      <div class="row">
+        <div class="col col1">
+          <a href="/settings">
+            <img src="/icons/timbre_icon-back.svg" class="icon"/>
+          </a>
+        </div>
+        <div class="col col6">
+          <h1 class="u-align-center">{{_ "timbre-edit-timbre"}}</h1>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="wrapper">
+
+    <div class="container">
+
+      <form id="form-create-timbre">
+
+        <div class="row">
+          <div class="col col8">
+              <div class="form-input">
+                <input id="timbre-name" name="timbre-name" type="text" value="" placeholder="{{_ "timbre-name"}}" />
+              </div>
+              <div class="form-input">
+                <input id="timbre-address" name="timbre-address" type="text" value="" placeholder="{{_ "timbre-address-optional"}}" />
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col8">
+            <div id="map" class="map"></div>
+            <input id="timbre-lat" name="timbre-lat" type="text" value="" />
+            <input id="timbre-long" name="timbre-long" type="text" value="" />
+          </div>
+
+          <div class="row">
+            <div class="col col8">
+              <div class="form-submit">
+                <input type="submit" class="button" value="{{_ "timbre-edit-update"}}" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</template>
