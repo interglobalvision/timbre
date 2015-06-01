@@ -10,8 +10,6 @@ Template.editTimbre.onRendered(function() {
 
       var startLocation = [locationInputLat.val(), locationInputLong.val()];
 
-      console.log(locationInputLat.val);
-
       L.mapbox.accessToken = 'pk.eyJ1IjoiaW50ZXJnbG9iYWx2aXNpb24iLCJhIjoiVWJ4c3pFayJ9.uetYP9xe-j0wqh4oUN3WxA';
       var map = L.mapbox.map('map', 'interglobalvision.lgbm61l6');
       map.setView(startLocation, 17);
@@ -39,12 +37,16 @@ Template.editTimbre.events = {
   'submit #form-edit-timbre': function(e) {
     e.preventDefault();
     var data = $('#form-edit-timbre').serializeArray();
-    Meteor.call('editTimbre', [this.params._id, data], function (error, result) {
+    data.push(this._id);
+    
+    Meteor.call('editTimbre', data, function (error, result) {
       if (error) {
         console.log(error);
       } else {
-        Router.go('/');
+        console.log('success');
+        Router.go('/settings');
       }
     });
+    
   }
 };
