@@ -49,13 +49,23 @@ Template.createTimbre.onRendered(function() {
 Template.createTimbre.events = {
   'submit #form-create-timbre': function(e) {
     e.preventDefault();
-    var data = $('#form-create-timbre').serializeArray();
-    Meteor.call('createTimbre', data, function (error, result) {
-      if (error) {
-        console.log(error);
-      } else {
-        Router.go('/');
-      }
-    });
+    var data = $('#form-create-timbre').serializeArray(),
+      address = data[1].value,
+      length = address.length;
+
+    if (length <= 50) {
+
+      Meteor.call('createTimbre', data, function (error, result) {
+        if (error) {
+          console.log(error);
+        } else {
+          Router.go('/');
+        }
+      });
+
+    } else {
+      console.log('Your address is longer than 50 characters. Try and shorten it a bit.');
+      // flash('Your address is longer than 50 characters. Try and shorten it a bit.');
+    }
   }
 };

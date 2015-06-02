@@ -36,17 +36,28 @@ Template.editTimbre.onRendered(function() {
 Template.editTimbre.events = {
   'submit #form-edit-timbre': function(e) {
     e.preventDefault();
-    var data = $('#form-edit-timbre').serializeArray();
+    var data = $('#form-edit-timbre').serializeArray(),
+      address = data[1].value,
+      length = address.length;
+
     data.push(this._id);
+
+    if (length <= 50) {
     
-    Meteor.call('editTimbre', data, function (error, result) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('success');
-        Router.go('/settings');
-      }
-    });
+      Meteor.call('editTimbre', data, function (error, result) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('success');
+          Router.go('/settings');
+        }
+      });
+
+    } else {
+      console.log('Your address is longer than 50 characters. Try and shorten it a bit.');
+      // flash('Your address is longer than 50 characters. Try and shorten it a bit.');
+    }
+
     
   }
 };
