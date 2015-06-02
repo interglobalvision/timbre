@@ -39,3 +39,7 @@ Meteor.publish('userTimbres', function(userId){
 Meteor.publish('notifications', function(userId){
   return Notifications.find({userId: userId});
 });
+
+Meteor.publish("allUsernames", function () {
+  return Meteor.users.find({}, {fields: {username: 1}});
+});
