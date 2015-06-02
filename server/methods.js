@@ -14,14 +14,6 @@ Meteor.methods({
     lat = parseFloat(lat);
     lng = parseFloat(lng);
 
-/*
-    console.log(name);
-    console.log(address);
-    console.log(lat);
-    console.log(lng);
-    console.log(Meteor.user()._id);
-*/
-
     return Timbres.insert({
       name: name,
       address: address,
