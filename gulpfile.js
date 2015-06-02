@@ -25,10 +25,10 @@ gulp.task('lintjs', function () {
   .pipe(jscs());
 });
 
-    /**
-     * @task JavaScript/JSON watch.
-     *   Watches changes on relevant js and json files and reports accordingly.
-     */
+/**
+ * @task JavaScript/JSON watch.
+ *   Watches changes on relevant js and json files and reports accordingly.
+ */
 gulp.task('watch', function () {
   gulp.watch([
     'gulpfile.js',
@@ -38,3 +38,5 @@ gulp.task('watch', function () {
     '!node_modules/**/*.js'
   ], ['lintjs']);
 });
+
+gulp.task('default', ['watch']);
