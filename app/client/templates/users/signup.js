@@ -14,6 +14,7 @@ Template.signup.events = {
 
     var usernameExists = Meteor.users.findOne({username: user.username});
 
+
     if (isNotEmpty(user.username) && isNotEmpty(user.email) && isNotEmpty(user.password)) {
 
       if (usernameLength <= usernameLimit) {
@@ -69,5 +70,5 @@ Template.signup.events = {
       // flash('Please fill in all fields.');
     }
 
-  }
+  },
 };
