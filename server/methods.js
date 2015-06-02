@@ -60,6 +60,25 @@ Meteor.methods({
     });
   },
 
+  editUser: function (data) {
+    var username = data[0].value,
+      email = data[1].value;
+
+    // Check argument types
+    check(username, String);
+    check(email, String);
+
+    return Meteor.users.update( 
+      { _id: Meteor.userId() }, 
+      { 
+        $set: { 
+          'username': username,
+          'emails.0.address': email 
+        }
+      } 
+    );
+  },
+
   checkPassword: function(digest) {
 
     if (this.userId) {
