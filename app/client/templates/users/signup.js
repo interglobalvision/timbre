@@ -25,7 +25,7 @@ Template.signup.events = {
             if (isValidPassword(user.password)) {
 
               if (areSimilarPasswords(user.password, user.repeatPassword)) {
-  /*
+                
                 Accounts.createUser(user, function(error){
 
                   if (error) {
@@ -38,7 +38,7 @@ Template.signup.events = {
                   }
 
                 });
-              */console.log('account created');
+
               } else {
                 console.log('Oh those passwords dont match.');
                 // flash('Oh those passwords dont match.');
