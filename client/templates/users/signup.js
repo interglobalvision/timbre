@@ -9,7 +9,7 @@ Template.signup.events = {
     };
 
     var length = user.username.length,
-      limit = usernameLimit();
+      limit = nameLimit();
 
     if (isNotEmpty(user.username) && isNotEmpty(user.email) && isNotEmpty(user.password)) {
       if (length <= limit) {
@@ -29,7 +29,7 @@ Template.signup.events = {
             console.log('Your password should be 6 characters or longer.');
             // flash('Your password should be 6 characters or longer.')
           }
-          
+
         } else {
           console.log('Please enter a valid email.');
           // flash('Please enter a valid email.');
