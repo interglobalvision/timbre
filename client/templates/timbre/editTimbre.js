@@ -37,26 +37,36 @@ Template.editTimbre.events = {
   'submit #form-edit-timbre': function(e) {
     e.preventDefault();
     var data = $('#form-edit-timbre').serializeArray(),
+      name = data[0].value,
+      nameLength = name.length,
+      nameLimit = nameLimit(),
       address = data[1].value,
-      length = address.length,
-      limit = addressLimit();
+      addressLength = address.length,
+      addressLimit = addressLimit();
 
     data.push(this._id);
 
-    if (length <= limit) {
-    
-      Meteor.call('editTimbre', data, function (error, result) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('success');
-          Router.go('/settings');
-        }
-      });
+    if (nameLength <= nameLimit) {
+
+      if (addressLength <= addressLimit) {
+      
+        Meteor.call('editTimbre', data, function (error, result) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('success');
+            Router.go('/settings');
+          }
+        });
+
+      } else {
+        console.log('Your address is longer than 50 characters. Try and shorten it a bit.');
+        // flash('Your address is longer than 50 characters. Try and shorten it a bit.');
+      }
 
     } else {
-      console.log('Your address is longer than 50 characters. Try and shorten it a bit.');
-      // flash('Your address is longer than 50 characters. Try and shorten it a bit.');
+      console.log('Your Timbre name is over 20 characters. Try something shorter.');
+      // flash('Your Timbre name is over 20 characters. Try something shorter.');
     }
 
     
