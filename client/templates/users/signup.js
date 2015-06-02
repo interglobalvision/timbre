@@ -8,27 +8,38 @@ Template.signup.events = {
       password: $('#password').val()
     };
 
+    var length = user.username.length,
+      limit = usernameLimit();
+
     if (isNotEmpty(user.username) && isNotEmpty(user.email) && isNotEmpty(user.password)) {
-      if (isEmail(user.email)) {
-        if (isValidPassword(user.password)) {
-          Accounts.createUser(user, function(error){
-            if (error) {
-              console.log(error.reason);
-              // flash(error.reason, 'error');
-            } else {
-              Router.go('/');
-              console.log('Thanks for signing up!');
-              // flash('Thanks for signing up!');
-            }
-          });
+      if (length <= limit) {
+        if (isEmail(user.email)) {
+          if (isValidPassword(user.password)) {
+            Accounts.createUser(user, function(error){
+              if (error) {
+                console.log(error.reason);
+                // flash(error.reason, 'error');
+              } else {
+                Router.go('/');
+                console.log('Thanks for signing up!');
+                // flash('Thanks for signing up!');
+              }
+            });
+          } else {
+            console.log('Your password should be 6 characters or longer.');
+            // flash('Your password should be 6 characters or longer.')
+          }
+          
         } else {
-          console.log('Your password should be 6 characters or longer.');
-          // flash('Your password should be 6 characters or longer.')
+          console.log('Please enter a valid email.');
+          // flash('Please enter a valid email.');
         }
+
       } else {
-        console.log('Please enter a valid email.');
-        // flash('Please enter a valid email.');
+        console.log('Your username is over 20 characters. Try something shorter.');
+        // flash('Your username is over 20 characters. Try something shorter.');
       }
+
     } else { 
       console.log('Please fill in all fields.');
       // flash('Please fill in all fields.');
