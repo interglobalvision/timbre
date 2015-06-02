@@ -58,18 +58,16 @@
 
     <div class="row">
       <div class="col col8">
-        <h3>Users</h3>
+        <h3>{{_ "timbre-add-users"}}</h3>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col col8">
-          <ul>
+          <ul class="user-list">
             {{#each usernames}}
-            <li>
-              <a class="settings-button">{{username}}</a>
-            </li>
+            <li class="user-list-item">{{username}}</li>
             {{/each}}
           </ul>
         </div>
