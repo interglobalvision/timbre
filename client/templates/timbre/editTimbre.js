@@ -39,16 +39,14 @@ Template.editTimbre.events = {
     var data = $('#form-edit-timbre').serializeArray(),
       name = data[0].value,
       nameLength = name.length,
-      nameLimit = nameLimit(),
       address = data[1].value,
-      addressLength = address.length,
-      addressLimit = addressLimit();
+      addressLength = address.length;
 
     data.push(this._id);
 
-    if (nameLength <= nameLimit) {
+    if (nameLength <= nameLimit()) {
 
-      if (addressLength <= addressLimit) {
+      if (addressLength <= addressLimit()) {
       
         Meteor.call('editTimbre', data, function (error, result) {
           if (error) {
