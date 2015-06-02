@@ -5,7 +5,8 @@ Meteor.methods({
     var name = data[0].value,
       address = data[1].value,
       lat = data[2].value,
-      lng = data[3].value;
+      lng = data[3].value,
+      username = Meteor.user().username;
 
     // Check argument types
     check(name, String);
@@ -21,7 +22,8 @@ Meteor.methods({
         type: "Point",
         coordinates: [lng, lat]
       },
-      users: [Meteor.user()._id]
+      users: [ Meteor.userId() ],
+      usernames: [ { username: username } ]
     });
   },
 
@@ -87,7 +89,7 @@ Meteor.methods({
     var timbre = Timbres.findOne({_id: timbreId});
 
     for (var i = 0; i < timbre.users.length; i++) {
-//       console.log(timbre.users[i]);
+      console.log(timbre.users[i]);
 
       Notifications.insert({
         timbreName: timbre.name,
