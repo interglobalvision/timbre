@@ -18,11 +18,11 @@
 
   </div>
 
+  {{#with timbre}}
   <div class="wrapper">
 
     <div class="container">
 
-    {{#with timbre}}
       <form id="form-edit-timbre">
 
         <div class="row">
@@ -53,8 +53,7 @@
         </div>
 
       </form>
-    {{/with}}
-
+    
     </div>
 
     <div class="row">
@@ -64,11 +63,24 @@
     </div>
 
     <div class="container">
+      <div class="row">
+        <div class="col col8">
+          <ul>
+            {{#each usernames}}
+            <li>
+              <a class="settings-button">{{username}}</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      
 
       {{> addUsers}}
 
     </div>
 
   </div>
+  {{/with}}
 
 </template>
