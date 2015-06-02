@@ -4,7 +4,7 @@ Template.signup.rendered = function() {
     Meteor.subscribe("allUsernames");
   });
 
-}
+};
 
 Template.signup.events = {
   'click input[type=submit]': function(event){
@@ -13,13 +13,14 @@ Template.signup.events = {
     var user = {
       username: $('#username').val(),
       email: $('#eventmail').val(),
-      password: $('#password').val()
+      password: $('#password').val(),
     };
 
     var usernameLength = user.username.length,
       usernameLimit = nameLimit();
 
     var usernameExists = Meteor.users.findOne({username: username});
+
 
     if (isNotEmpty(user.username) && isNotEmpty(user.email) && isNotEmpty(user.password)) {
       if (usernameLength <= usernameLimit) {
@@ -61,5 +62,5 @@ Template.signup.events = {
       // flash('Please fill in all fields.');
     }
 
-  }
+  },
 };
