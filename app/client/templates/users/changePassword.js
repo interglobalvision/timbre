@@ -16,11 +16,8 @@ Template.changePassword.events = {
 
     Meteor.call('checkPassword', digest, function(err, result) {
       if (result) {
-      	console.log('password checked.');
 		    if (isValidPassword(passwords.newPassword)) {
-		    	console.log('new password is valid');
 		    	if (areSimilarPasswords(passwords.newPassword, passwords.newAgain)) {
-		    		console.log('new passwords are similar');
 		    		Accounts.changePassword(passwords.oldPassword, passwords.newPassword, function(error) {
 			    		if (error) {
 			          console.log('We are sorry but something went wrong.');
