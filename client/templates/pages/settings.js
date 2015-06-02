@@ -3,8 +3,8 @@ Template.settings.events = {
     e.preventDefault();
     var data = $('#form-user-settings').serializeArray();
 
-    if (isNotEmpty(data.[0]) && isNotEmpty(data.[1])) {
-      if (isEmail(data.[1])) {
+    if (isNotEmpty(data[0]) && isNotEmpty(data[1])) {
+      if (isEmail(data[1])) {
     
         Meteor.call('editUser', data, function (error, result) {
           if (error) {
