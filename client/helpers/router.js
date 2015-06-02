@@ -108,9 +108,7 @@ Router.map(function() {
       return Meteor.subscribe('userTimbres', Meteor.userId() );
     },
     data: {
-      userTimbres: function(){
-        return Timbres.find({users: Meteor.userId()});
-      }
+      userTimbres: function(){ return Timbres.find({ users: Meteor.userId() }) },
     }
   });
 
