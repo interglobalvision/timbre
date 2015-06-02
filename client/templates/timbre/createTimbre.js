@@ -51,9 +51,10 @@ Template.createTimbre.events = {
     e.preventDefault();
     var data = $('#form-create-timbre').serializeArray(),
       address = data[1].value,
-      length = address.length;
+      length = address.length,
+      limit = addressLimit();
 
-    if (length <= 50) {
+    if (length <= limit) {
 
       Meteor.call('createTimbre', data, function (error, result) {
         if (error) {
