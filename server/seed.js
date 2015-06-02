@@ -47,7 +47,8 @@ if (Timbres.find().count() === 0) {
       coordinates: [ -99.162956, 19.409738 ]
     },
     address: "Nayarit 45, Col. Roma",
-    users: [ globie._id ]
+    users: [ globie._id ],
+    usernames: [ { username: globie.username } ]
   });
 
   Timbres.insert({
@@ -57,7 +58,8 @@ if (Timbres.find().count() === 0) {
       coordinates: [ -99.162956, 19.409738 ]
     },
     address: "Nayarit 43, Col. Roma",
-    users: [ globie._id ]
+    users: [ globie._id, hugo._id ],
+    usernames: [ { username: globie.username }, { username: hugo.username } ]
   });
 
   Timbres.insert({
@@ -67,7 +69,8 @@ if (Timbres.find().count() === 0) {
       coordinates: [ -99.162248, 19.409865 ]
     },
     address: "Monterrey 259, Col. Roma",
-    users: [ globie._id ]
+    users: [ globie._id, paco._id ],
+    usernames: [ { username: globie.username }, { username: paco.username } ]
   });
 
   Timbres.insert({
@@ -77,6 +80,7 @@ if (Timbres.find().count() === 0) {
       coordinates: [ -99.1490657, 19.4313399 ]
     },
     address: "Ayuntamiento 132 - 15, Col. Centro, Cuauhtémoc, DF",
-    users: [ globie._id ]
+    users: [ globie._id, luis._id ],
+    usernames: [ { username: globie.username }, { username: luis.username } ]
   });
 }
