@@ -67,17 +67,21 @@
 
       <div class="row">
         <div class="col col8">
-          <form>
+
+        {{#with currentUser}}
+          <form id="form-user-settings">
             <div class="form-input">
-              <input id="username" name="username" type="text" value="" placeholder="{{_ "user-username"}}" />
+              <input id="username" name="username" type="text" value="{{username}}" placeholder="{{_ "user-username"}}" />
             </div>
             <div class="form-input">
-              <input id="email" name="email" type="text" value="" placeholder="{{_ "user-email"}}" />
+              <input id="email" name="email" type="text" value="{{emails.[0].address}}" placeholder="{{_ "user-email"}}" />
             </div>
             <div class="form-submit">
               <input type="submit" class="button" value="{{_ "settings-change"}}" />
             </div>
           </form>
+        {{/with}}
+
         </div>
       </div>
 
