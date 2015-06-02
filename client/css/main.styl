@@ -7,9 +7,6 @@ $margin-large = ($margin-small*5)
 
 $border-width = 1px
 
-.container
-  margin-top: $margin-small
-
 // TIMING
 
 $speed-basic = 500
@@ -111,7 +108,7 @@ img.toolbar-logo
 // FORM
 
 form
-  padding: 0 $margin-small
+  padding: $margin-small $margin-small 0
   border-bottom: $border-width solid $color-light-gray
 
 input
@@ -167,6 +164,21 @@ a.settings-button
   display: block
   text-transform: uppercase 
   color: $color-gray
+  
+// EDIT TIMBRE
+
+#form-add-users
+  padding-bottom: ( $margin-large * 2 ) 
+  
+.twitter-typeahead
+  display: block !important
+  
+.tt-menu
+  width: 100%
+  
+.tt-suggestion
+  padding: $margin-small
+  border-bottom: $border-width solid $color-light-gray
 
 // CREATE TIMBRE
 
