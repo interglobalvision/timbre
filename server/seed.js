@@ -9,21 +9,25 @@ Fill in the app with dummy data if database is empty.
 /* Dummy user */
 if( Meteor.users.findOne({ 'emails.address': 'globie@interglobal.vision' }) == undefined ) {
   Accounts.createUser({
+    username: 'globie',
     email: 'globie@interglobal.vision',
     password: 'globie'
   });
 
   Accounts.createUser({
+    username: 'hugo',
     email: 'hugo@interglobal.vision',
     password: 'hugo'
   });
 
   Accounts.createUser({
+    username: 'paco',
     email: 'paco@interglobal.vision',
     password: 'paco'
   });
 
   Accounts.createUser({
+    username: 'luis',
     email: 'luis@interglobal.vision',
     password: 'luis'
   });
