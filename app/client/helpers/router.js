@@ -142,6 +142,20 @@ Router.map(function() {
     }
   });
 
+  this.route('leaveTimbre', {
+    path: '/timbre/leave/:_id',
+    waitOn: function () {
+      return [
+        Meteor.subscribe('singleTimbre', this.params._id),
+      ];
+    },
+    data: {
+      timbre: function(){ 
+        return Timbres.findOne() 
+      }
+    }
+  });
+
   // Users
 
   this.route('login');
