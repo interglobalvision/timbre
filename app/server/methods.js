@@ -22,8 +22,7 @@ Meteor.methods({
         type: "Point",
         coordinates: [lng, lat]
       },
-      users: [ Meteor.userId() ],
-      usernames: [ { username: username } ]
+      users: [ Meteor.userId() ]
     });
   },
 
@@ -55,14 +54,9 @@ Meteor.methods({
   },
 
   addUser: function (data) {
-
     var username = data[0].value,
       userId = data[1],
       timbreId = data[2];
-
-    console.log(username);
-    console.log(userId);
-    console.log(timbreId);
 
     // Check argument types
     check(username, String);
@@ -71,12 +65,10 @@ Meteor.methods({
 
     return Timbres.update(timbreId, {
         $addToSet: {
-          users: userId,
-          usernames: { username: username }
+          users: userId
         }
       }
     );
-
   },
 
   editUser: function (data) {
