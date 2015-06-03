@@ -36,6 +36,11 @@ Meteor.publish('userTimbres', function(userId){
   return Timbres.find({users: userId});
 });
 
+Meteor.publish('timbreUsers', function(id){
+  var timbre = Timbres.find({ _id: id }).fetch();
+  return Meteor.users.find( { _id: { $in: timbre[0].users } } )
+});
+
 Meteor.publish('notifications', function(userId){
   return Notifications.find({userId: userId});
 });
@@ -43,3 +48,4 @@ Meteor.publish('notifications', function(userId){
 Meteor.publish("allUsernames", function () {
   return Meteor.users.find({}, {fields: {username: 1}});
 });
+
