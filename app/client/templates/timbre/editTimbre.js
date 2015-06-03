@@ -46,7 +46,7 @@ Template.editTimbre.events = {
       address = data[1].value,
       addressLength = address.length;
 
-    data.push(this._id);
+    data.push(Timbres.findOne()._id);
     if (nameLength <= nameLimit()) {
       if (addressLength <= addressLimit()) {
 
