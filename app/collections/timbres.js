@@ -24,21 +24,3 @@ Timbres.allow({
     return can.removeTimbre(userId, doc);
   }
 });
-
-// Methods
-
-Meteor.methods({
-/*
-  createTimbre: function(timbre){
-    if(can.createTimbre(Meteor.user()))
-      Timbres.insert(timbre);
-  },
-*/
-  removeTimbre: function(timbre){
-    if(can.removeTimbre(Meteor.user(), timbre)){
-      Timbres.remove(timbre._id);
-    }else{
-      throw new Meteor.Error(403, 'You do not have the rights to delete this timbre.')
-    }
-  }
-});

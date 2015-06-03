@@ -59,7 +59,6 @@ Meteor.methods({
       timbreId = data[2];
 
     // Check argument types
-    check(username, String);
     check(userId, String);
     check(timbreId, String);
 
@@ -69,6 +68,28 @@ Meteor.methods({
         }
       }
     );
+  },
+
+  leaveTimbre: function (data) {
+    var timbreId = data[0],
+      userId = data[1];
+
+    // Check argument types
+    check(userId, String);
+    check(timbreId, String);
+
+    return Timbres.update(timbreId, {
+        $pull: {
+          users: userId
+        }
+      }
+    );
+  },
+
+  removeTimbre: function(timbreId){
+    check(timbreId, String);
+
+    return Timbres.remove(timbreId);
   },
 
   editUser: function (data) {
