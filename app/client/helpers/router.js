@@ -127,11 +127,17 @@ Router.map(function() {
   this.route('editTimbre', {
     path: '/timbre/edit/:_id',
     waitOn: function () {
-      return Meteor.subscribe('singleTimbre', this.params._id);
+      return [
+        Meteor.subscribe('singleTimbre', this.params._id),
+        Meteor.subscribe('timbreUsers', this.params._id)
+      ];
     },
-    data: function () {
-      return {
-        timbre: Timbres.findOne(this.params._id)
+    data: {
+      timbre: function(){ 
+        return Timbres.findOne() 
+      },
+      users: function() {
+        return Meteor.users.find( { _id: { $in: Timbres.findOne().users } } );
       }
     }
   });
