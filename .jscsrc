@@ -7,7 +7,6 @@
   "disallowMultipleLineStrings": true,
   "disallowMultipleSpaces": true,
   "disallowNewlineBeforeBlockStatements": true,
-  "disallowPaddingNewlinesBeforeKeywords": true,
   "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
   "disallowSpacesInCallExpression": true,
   "disallowSpacesInsideObjectBrackets": "all",
@@ -21,8 +20,29 @@
   "requirePaddingNewLineAfterVariableDeclaration": true,
   "requirePaddingNewLinesAfterBlocks": true,
   "requireSemicolons": true,
-  "requireSpaceAfterBinaryOperators": true,
-  "requireSpaceBeforeBinaryOperators": true,
-  "requireTrailingComma": true,
-  "safeContextKeyword": ["_this"]
+  "requireSpaceAfterBinaryOperators": [
+    "=",
+    "+",
+    "-",
+    "/",
+    "*",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "requireSpaceBeforeBinaryOperators": [
+    "=",
+    "+",
+    "-",
+    "/",
+    "*",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "requireTrailingComma": ["ignoreSingleValue", "ignoreSingleLine"],
+  "safeContextKeyword": ["_this"],
+  "excludeFiles": ["node_modules/**"]
 }
