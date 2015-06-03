@@ -18,11 +18,12 @@
 
   </div>
 
-  {{#with timbre}}
+  
   <div class="wrapper">
 
     <div class="container">
 
+      {{#with timbre}}
       <form id="form-edit-timbre">
 
         <div class="row">
@@ -53,6 +54,7 @@
         </div>
 
       </form>
+      {{/with}}
     
     </div>
 
@@ -66,7 +68,7 @@
       <div class="row">
         <div class="col col8">
           <ul class="user-list">
-            {{#each usernames}}
+            {{#each users}}
             <li class="user-list-item">{{username}}</li>
             {{/each}}
           </ul>
@@ -79,6 +81,6 @@
     </div>
 
   </div>
-  {{/with}}
+  
 
 </template>
